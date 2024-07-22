@@ -1,0 +1,62 @@
+float myVariable;
+
+void onevent_ControllerButtonEUp_pressed_0() {
+  Base.spin(forward);
+}
+
+void onevent_ControllerButtonEUp_released_0() {
+  Base.stop();
+}
+
+void onevent_ControllerButtonEDown_pressed_0() {
+  Base.spin(reverse);
+}
+
+void onevent_ControllerButtonEDown_released_0() {
+  Base.stop();
+}
+
+void onevent_ControllerButtonFUp_pressed_0() {
+  Claw.spin(forward);
+}
+
+void onevent_ControllerButtonFDown_pressed_0() {
+  Claw.spin(reverse);
+}
+
+void onevent_ControllerButtonFDown_released_0() {
+  Claw.stop();
+}
+
+void onevent_ControllerButtonLUp_pressed_0() {
+  Back.spin(forward);
+}
+
+void onevent_ControllerButtonLDown_released_0() {
+  Back.stop();
+}
+
+void onevent_ControllerButtonRUp_pressed_0() {
+  UpDown.spin(forward);
+}
+
+void onevent_ControllerButtonRDown_released_0() {
+  UpDown.stop();
+}
+
+
+int main() {
+  Controller.ButtonEUp.pressed(onevent_ControllerButtonEUp_pressed_0);
+  Controller.ButtonEUp.released(onevent_ControllerButtonEUp_released_0);
+  Controller.ButtonEDown.pressed(onevent_ControllerButtonEDown_pressed_0);
+  Controller.ButtonEDown.released(onevent_ControllerButtonEDown_released_0);
+  Controller.ButtonFUp.pressed(onevent_ControllerButtonFUp_pressed_0);
+  Controller.ButtonFDown.pressed(onevent_ControllerButtonFDown_pressed_0);
+  Controller.ButtonFDown.released(onevent_ControllerButtonFDown_released_0);
+  Controller.ButtonLUp.pressed(onevent_ControllerButtonLUp_pressed_0);
+  Controller.ButtonLDown.released(onevent_ControllerButtonLDown_released_0);
+  Controller.ButtonRUp.pressed(onevent_ControllerButtonRUp_pressed_0);
+  Controller.ButtonRDown.released(onevent_ControllerButtonRDown_released_0);
+
+  wait(15, msec);
+}
