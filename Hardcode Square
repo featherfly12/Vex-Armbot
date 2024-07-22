@@ -1,0 +1,34 @@
+float myVariable;
+
+event message1 = event();
+
+int whenStarted1() {
+  Back.spinFor(forward, 400.0, degrees, true);
+  Base.spinFor(forward, 200.0, degrees, true);
+  message1.broadcast();
+  return 0;
+}
+
+int whenStarted2() {
+  UpDown.spinFor(forward, 400.0, degrees, true);
+  return 0;
+}
+
+void onevent_message1_0() {
+  Back.spinFor(reverse, 400.0, degrees, true);
+  Base.spinFor(reverse, 200.0, degrees, true);
+}
+
+void onevent_message1_1() {
+  UpDown.spinFor(reverse, 400.0, degrees, true);
+}
+
+
+int main() {
+  message1(onevent_message1_0);
+  message1(onevent_message1_1);
+
+  wait(15, msec);
+  vex::task ws1(whenStarted2);
+  whenStarted1();
+}
